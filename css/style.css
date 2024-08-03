@@ -23,8 +23,32 @@ body {
 .sidebar ul {
   color: var(--white);
   margin: 40px;
+
 }
 
 .sidebar ul li {
   padding: 10px;
+  list-style-type: none;
 }
+
+.sidebar ul li:hover {
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+
+.sidebar ul li:active {
+  color: var(--white);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.signOut {
+  color: var(--yellow);
+  bottom: 0;
+  position: fixed;
+  margin: 50px;
+  padding: 10px;
+}
+
+

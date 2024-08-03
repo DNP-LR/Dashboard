@@ -1,3 +1,10 @@
+:root {
+  --blue: #0052B4;
+  --white: #FFFFFF;
+  --yellow: #FFB27D;
+}
+
+
 .sidebar {
-  background: #555555;
+  background: var(--blue);
 }

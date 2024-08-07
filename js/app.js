@@ -53,6 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+  function postData() {
+    const data = {
+      name: 'Donfack',
+      age: 22,
+      email: 'noubissiepavel@gmail.com'
+    };
+
+    fetch('https://dummyjson.com/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+
   function updateCard(data) {
     const card = document.querySelector('.card-container .card:nth-child(2)');
     if (card) {

@@ -23,3 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const homeLink = document.getElementById('homeLink');
+  const studentsLink = document.getElementById('studentsLink');
+  const classesLink = document.getElementById('classesLink');
+  const homeSection = document.getElementById('homeSection');
+  const studentsSection = document.getElementById('studentsSection');
+  const classesSection = document.getElementById('classesSection');
+
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+
+    const links = document.querySelectorAll('.sidebar ul li');
+    links.forEach(link => {
+      link.classList.remove('active');
+    });
+    document.getElementById(sectionId.replace('Section', 'Link')).classList.add('active');
+  }
+
+  homeLink.addEventListener('click', () => {
+    showSection('homeSection');
+  });
+
+  studentsLink.addEventListener('click', () => {
+    showSection('studentsSection');
+  });
+
+  classesLink.addEventListener('click', () => {
+    showSection('classesSection');
+  });
+});
+
+

@@ -3,6 +3,7 @@
   --white: #FFFFFF;
   --yellow: #FFB27D;
   --backgroundColor: #F0F7FF;
+  --black-face: #333
 }
 
 * {
@@ -137,22 +138,30 @@ input[type="text"]:focus {
   border-radius: 10px;
   color: var(--white);
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
-#welcome h1,
-#welcome p {
+.welcome h1, p {
   margin-bottom: 10px;
+}
+
+.welcome h1, #p1 {
+  margin: 20px;
+  text-align: justify;
+  line-height: 1.6;
 }
 
 .leftText {
   padding: 20px;
   margin: 20px;
+  text-align: justify;
 }
 
 .card-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 10px;
 }
 
 .card {
@@ -163,6 +172,53 @@ input[type="text"]:focus {
   flex: 1;
   min-width: 200px;
   text-align: center;
+}
+
+
+.chart-container {
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--black-face);
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 300px;
+
+  margin: 15px;
+}
+
+.bar {
+  width: 40px;
+  background-color: #007BFF;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.bar span {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.barHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -205,9 +261,6 @@ input[type="text"]:focus {
     padding: 10px;
   }
 
-  .card-container {
-    flex-direction: column;
-  }
 
   .card {
     width: 100%;

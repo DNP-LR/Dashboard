@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Edu Dash</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
   <meta property="og:title" content="">
@@ -18,10 +18,9 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 <body>
-
 <section class="sidebar">
   <div class="logo">
-    <img src="img/logo.png">
+    <img src="img/logo.png" alt="Logo">
     <span>Edu Dash</span>
   </div>
   <ul>
@@ -35,12 +34,10 @@
   </ul>
   <div class="signOut">Sign Out</div>
 </section>
-
-<div>
+<div class="main">
   <section class="navbar">
-    <div>
-      <input type="text" placeholder="Search class, Documents, Activity">
-    </div>
+    <button id="sidebarToggle" class="sidebarToggle"> ☰</button>
+    <input type="text" placeholder="Search class, Documents, Activity">
     <div class="rightNavBar">
       <div><span class="icon"></span></div>
       <div><span class="icon"></span></div>
@@ -50,23 +47,19 @@
   </section>
   <section class="mainContent">
     <div class="welcome">
-      <div>
-
+      <div class="leftText">
         <h1 id="h1">Welcome back, Kelsey</h1>
-        <p id="p1">csdcs sacscs c crnkadnn cjhriuebc jajciuhbcr ucaihfab cuhrfis ushaur fuhiashu </p>
-
-        </div>
-      <div><span class="icon"></span></div>
+        <p id="p1">Welcome message here.</p>
+      </div>
+      <img src="img/Teacher_and_student.png">
     </div>
-    <div>
-      <div class="card">gfgfg</div>
-      <div class="card">gfgfg</div>
-      <div class="card">gfgfg</div>
+    <div class="card-container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
     </div>
   </section>
 </div>
-
-
 <script src="js/app.js"></script>
 </body>
 </html>

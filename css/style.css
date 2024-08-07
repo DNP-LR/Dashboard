@@ -146,9 +146,14 @@ input[type="text"]:focus {
 }
 
 .welcome h1, #p1 {
-  margin: 20px;
   text-align: justify;
   line-height: 1.6;
+}
+
+.welcome img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .leftText {

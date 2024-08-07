@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
         if (section === 'home') {
-          fetchTestData(); // Fetch and display data if loading home section
+          fetchTestData();
         }
       })
       .catch(error => {
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateCard(data) {
-    const card2 = document.querySelector('.card-container .card:nth-child(2)');
-    if (card2) {
-      card2.innerHTML = `${data.method}`;
+    const card = document.querySelector('.card-container .card:nth-child(2)');
+    if (card) {
+      card.innerHTML = `${data.method}`;
     }
   }
 

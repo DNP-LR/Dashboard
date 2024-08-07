@@ -224,14 +224,6 @@ input[type="text"]:focus {
   font-weight: bold;
 }
 
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-}
-
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);

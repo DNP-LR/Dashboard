@@ -13,22 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebar.classList.toggle('active');
   });
 
-  if (chart) {
-    console.log('Chart element found');
-    data.forEach(value => {
-      const bar = document.createElement('div');
-      bar.classList.add('bar');
-      const barHeight = (value / maxValue) * 300;
-      bar.style.height = `${barHeight}px`;
-      const label = document.createElement('span');
-      label.textContent = value.toString();
-      bar.appendChild(label);
-      chart.appendChild(bar);
-    });
-  } else {
-    console.error('Chart element not found');
-  }
-
   function loadSection(section) {
     fetch(`dashboard/${section}.html`)
       .then(response => response.text())
@@ -48,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             newChart.appendChild(bar);
           });
         }
+        if (section === 'home') {
+          fetchTestData(); // Fetch and display data if loading home section
+        }
       })
       .catch(error => {
         console.error('Error loading section:', error);
@@ -59,10 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => response.json())
       .then(data => {
         console.log('Data from API:', data);
+        updateCard(data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
+  }
+
+  function updateCard(data) {
+    const card2 = document.querySelector('.card-container .card:nth-child(2)');
+    if (card2) {
+      card2.innerHTML = `${data.method}`;
+    }
   }
 
   homeLink.addEventListener('click', () => {
@@ -87,5 +82,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   loadSection('home');
-  fetchTestData();
 });

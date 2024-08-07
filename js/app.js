@@ -27,35 +27,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeLink = document.getElementById('homeLink');
   const studentsLink = document.getElementById('studentsLink');
   const classesLink = document.getElementById('classesLink');
-  const homeSection = document.getElementById('homeSection');
-  const studentsSection = document.getElementById('studentsSection');
-  const classesSection = document.getElementById('classesSection');
+  const mainContent = document.querySelector('.mainContent');
 
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-      section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
-
-    const links = document.querySelectorAll('.sidebar ul li');
-    links.forEach(link => {
-      link.classList.remove('active');
-    });
-    document.getElementById(sectionId.replace('Section', 'Link')).classList.add('active');
+  function loadSection(section) {
+    fetch(`dashboard/${section}.html`)
+      .then(response => response.text())
+      .then(html => {
+        mainContent.innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Error loading section:', error);
+      });
   }
 
   homeLink.addEventListener('click', () => {
-    showSection('homeSection');
+    loadSection('home');
+    homeLink.classList.add('active');
+    studentsLink.classList.remove('active');
+    classesLink.classList.remove('active');
   });
 
   studentsLink.addEventListener('click', () => {
-    showSection('studentsSection');
+    loadSection('students');
+    homeLink.classList.remove('active');
+    studentsLink.classList.add('active');
+    classesLink.classList.remove('active');
   });
 
   classesLink.addEventListener('click', () => {
-    showSection('classesSection');
+    loadSection('classes');
+    homeLink.classList.remove('active');
+    studentsLink.classList.remove('active');
+    classesLink.classList.add('active');
   });
-});
 
+  loadSection('home');
+});
 

@@ -1,0 +1,12 @@
+user.email=noubissiepavel@gmail.com
+user.name=noubissie pavel
+credential.helper=store
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=https://github.com/DNP-LR/Dashboard.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
